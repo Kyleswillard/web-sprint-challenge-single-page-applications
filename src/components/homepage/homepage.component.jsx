@@ -1,42 +1,21 @@
-import React from 'react';
-
+import React from 'react'
 import styled from 'styled-components'
-import {Route, Switch, Link} from 'react-router-dom'
 
+import { Link } from 'react-router-dom'
 
-import PizzaForm from '../../components/pizza-form/pizza-form.component'
-
-
-const NavBar = styled.div `
-width: 50%;
-border-bottom: 2px solid black;
+const Frame = styled.div`
+width: 50vw,
+margin: center,
 
 
 `
-
-
-const Homepage = () => {
-
-  return (
-    <div>
-    <NavBar className='navbar'>
-    <Switch>
-    <Route path='/' component={Homepage} />
-    <Link to='/'>Home</Link>
-    <Route path='/pizza' component={PizzaForm} />
-    <Link to='/pizza'>Order</Link>
-    </Switch>
-    </NavBar>
-    <h1>That Guys Pizza</h1>
-
-      </div>
-
-
-
-
-  )
+export default function HomePage() {
+    return (
+        <Frame>
+            <h2>Your favorite food, delivered while coding</h2>
+            <Link to="/pizza">
+                <button>Pizza?</button>
+            </Link>
+        </Frame>
+    )
 }
-
-
-
-export default Homepage
